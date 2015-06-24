@@ -188,6 +188,7 @@ foreach ($files as $file) {
         $results[] = $file;
     } else {
         $stored_file = $fs->create_file_from_pathname($file_record, $file->filepath);
+        shell_exec("sh ./encrypt.sh $stored_file");
         $results[] = $file_record;
     }
 }
